@@ -18,7 +18,7 @@ public class HelloController {
         return "Hello from Bigkart!";
     }
 
-    @GetMapping("/ramtest")
+    @GetMapping("/customertest")
     public List<String> getRamName() {
         return jdbcTemplate.queryForList("SELECT name FROM temp", String.class);
     }
