@@ -1,7 +1,13 @@
 {
-  "name": "Java 17 + Docker",
+  "name": "Java 17",
   "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "jdkDistro": "ms"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    }
   }
 }
