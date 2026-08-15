@@ -1,13 +1,12 @@
 {
-  "name": "Java 17",
+  "name": "Java 17 + Docker-in-Docker",
   "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17",
-      "jdkDistro": "ms"
-    },
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest"
-    }
-  }
+    "ghcr.io/devcontainers/features/java:1": { "version": "17" },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": { "version": "latest" }
+  },
+  "runArgs": ["--privileged"],
+  "remoteUser": "vscode",
+  "forwardPorts": [8080],
+  "postCreateCommand": "docker info || true"
 }
