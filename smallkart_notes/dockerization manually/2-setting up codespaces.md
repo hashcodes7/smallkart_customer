@@ -7,15 +7,25 @@
 ### inside there use this confg so codespaces has jdk17 + docker both
 ``` json
 {
-  "name": "Java 17",
-  "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
+  "name": "Java 17 & Docker Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "17",
-      "jdkDistro": "ms"
+      "installMaven": "true",
+      "installGradle": "true"
     },
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest"
+      "version": "latest",
+      "enableMoby": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-azuretools.vscode-docker"
+      ]
     }
   }
 }
